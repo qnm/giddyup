@@ -1,10 +1,11 @@
-require 'git-version-bump'
+require 'git-version-bump' rescue "Unable to load Git Version Bump"
+
 
 Gem::Specification.new do |s|
 	s.name = "giddyup-deploy"
 
-	s.version = GVB.version
-	s.date    = GVB.date
+	s.version = GVB.version rescue "0.0.0.1.ENOGVB"
+	s.date    = GVB.date rescue Time.now
 
 	s.platform = Gem::Platform::RUBY
 
